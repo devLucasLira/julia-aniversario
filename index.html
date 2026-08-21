@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Julia - Feliz Aniversário</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;500;600&display=swap');
+
+        :root {
+            --mint-dark: #006633;
+            --mint-medium: #008844;
+            --mint-light: #4CAF7D;
+            --mint-pale: #B8EEDB;
+            --white: #FFFFFF;
+            --off-white: #F8FBF9;
+            --ice-blue: #E8F4FD;
+            --sky-blue: #5BA8D4;
+            --butterfly-blue: #4A90D9;
+            --butterfly-light: #7BB8E8;
+            --deep-blue: #2C5282;
+            --soft-blue: #B8D4E8;
+            --shadow: rgba(0, 102, 51, 0.15);
+            --border-light: #E0F0E8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #006633 0%, #008844 25%, #4CAF7D 50%, #E8F4FD 75%, #FFFFFF 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .coffee-page {
+            max-width: 1400px;
+            width: 100%;
+            background: var(--off-white);
+            border-radius: 25px;
+            box-shadow: 0 20px 40px var(--shadow);
+            overflow: hidden;
+            border: 3px solid var(--white);
+        }
+
+        .coffee-header {
+            background: linear-gradient(135deg, #006633, #008844, #4CAF7D);
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            border-bottom: 5px solid var(--white);
+        }
+
+        .coffee-header::before {
+            content: "☕";
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            animation: steam 3s ease-in-out infinite;
+        }
+
+        @keyframes steam {
+            0%, 100% { opacity: 0.3; transform: translateX(-50%) translateY(0); }
+            50% { opacity: 1; transform: translateX(-50%) translateY(-10px); }
+        }
+
+        .coffee-header h1 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--white);
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-top: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .coffee-header p {
+            color: var(--ice-blue);
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .butterfly-decoration {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .butterfly-icon {
+            font-size: 3rem;
+            animation: float 4s ease-in-out infinite;
+            color: #4A90D9;
+        }
+
+        .butterfly-icon:nth-child(2) {
+            animation-delay: 1s;
+            color: #7BB8E8;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .music-section {
+            background: linear-gradient(135deg, #E8F4FD 0%, #F8FBF9 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 3px solid var(--mint-pale);
+        }
+
+        .music-section h2 {
+            color: var(--deep-blue);
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .music-section p {
+            color: var(--deep-blue);
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .spotify-embed {
+            max-width: 500px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .spotify-embed iframe {
+            display: block;
+            width: 100%;
+            height: 152px;
+            border: none;
+            border-radius: 12px;
+        }
+
+        .counter-section {
+            background: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 3px solid var(--mint-pale);
+        }
+
+        .counter-section h2 {
+            color: var(--deep-blue);
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .counter-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .counter-item {
+            background: linear-gradient(135deg, var(--mint-medium), var(--mint-dark));
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: 15px;
+            min-width: 120px;
+            box-shadow: 0 5px 15px var(--shadow);
+            border: 2px solid var(--white);
+        }
+
+        .counter-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            display: block;
+        }
+
+        .counter-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--mint-pale);
+        }
+
+        .photos-section {
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--ice-blue) 0%, var(--off-white) 100%);
+            text-align: center;
+        }
+
+        .photos-section h2 {
+            color: var(--deep-blue);
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .photo-placeholder {
+            aspect-ratio: 1/1;
+            border-radius: 15px;
+            border: 3px solid var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px var(--shadow);
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--mint-pale), var(--soft-blue));
+        }
+
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-placeholder:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px var(--shadow);
+            border-color: var(--deep-blue);
+        }
+
+        .photo-placeholder-empty {
+            aspect-ratio: 1/1;
+            border-radius: 15px;
+            border: 3px dashed var(--mint-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px var(--shadow);
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--off-white), var(--ice-blue));
+            padding: 1rem;
+        }
+
+        .photo-placeholder-empty:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px var(--shadow);
+            border-color: var(--butterfly-blue);
+        }
+
+        .photo-placeholder-empty span {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: var(--deep-blue);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .message-section {
+            padding: 4rem 3rem;
+            background: var(--white);
+            text-align: center;
+            border-top: 5px solid var(--mint-light);
+        }
+
+        .message-section h2 {
+            color: var(--deep-blue);
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .message-box {
+            background: linear-gradient(135deg, var(--off-white) 0%, var(--ice-blue) 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px solid var(--mint-light);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .message-box::before {
+            content: "❝";
+            position: absolute;
+            top: -30px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--mint-light);
+            opacity: 0.5;
+        }
+
+        .message-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.9rem;
+            line-height: 1.7;
+            color: var(--deep-blue);
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .message-signature {
+            margin-top: 2rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--deep-blue);
+            text-align: right;
+        }
+
+        .coffee-footer {
+            background: linear-gradient(135deg, #006633, #008844);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            font-family: 'Dancing Script', cursive;
+            line-height: 1.8;
+        }
+
+        .coffee-footer span {
+            color: var(--mint-pale);
+        }
+
+        @media (max-width: 768px) {
+            .coffee-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .coffee-header p {
+                font-size: 1.4rem;
+            }
+            
+            .counter-container {
+                gap: 1rem;
+            }
+            
+            .counter-item {
+                min-width: 100px;
+                padding: 1rem;
+            }
+            
+            .counter-number {
+                font-size: 2rem;
+            }
+            
+            .message-text {
+                font-size: 1.4rem;
+            }
+            
+            .photo-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+            
+            .photo-placeholder {
+                font-size: 3rem;
+            }
+            
+            .music-section h2 {
+                font-size: 2rem;
+            }
+            
+            .music-section p {
+                font-size: 1.1rem;
+            }
+            
+            .photo-placeholder-empty span {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="coffee-page">
+        <!-- Header com símbolos -->
+        <div class="coffee-header">
+            <h1>Feliz Aniversário, Julia! 🎂</h1>
+            <p>Minha Xuxuzinha</p>
+            <div class="butterfly-decoration">
+                <span class="butterfly-icon">🦋</span>
+                <span class="butterfly-icon">☕</span>
+                <span class="butterfly-icon">🦋</span>
+            </div>
+        </div>
+
+        <!-- SEÇÃO DE MÚSICA -->
+        <div class="music-section">
+            <h2>🎵 Nossa Música 🎵</h2>
+            <p>Escute nossa música enquanto navega por aqui... 💕</p>
+            <div class="spotify-embed">
+                <iframe data-testid="embed-iframe" style="border-radius:12px" 
+                        src="https://open.spotify.com/embed/track/5ivF4eQBqJiVL5IAE9jRyl?utm_source=generator&si=9892655dfc4842e6#1:45" 
+                        width="100%" 
+                        height="152" 
+                        frameBorder="0" 
+                        allowfullscreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Contador de tempo juntos -->
+        <div class="counter-section">
+            <h2>💕 Nosso Tempo Juntos 💕</h2>
+            <div class="counter-container">
+                <div class="counter-item">
+                    <span class="counter-number" id="days">0</span>
+                    <span class="counter-label">Dias</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" id="hours">0</span>
+                    <span class="counter-label">Horas</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" id="minutes">0</span>
+                    <span class="counter-label">Minutos</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" id="seconds">0</span>
+                    <span class="counter-label">Segundos</span>
+                </div>
+            </div>
+            <p style="margin-top: 1.5rem; color: var(--deep-blue); font-size: 1.1rem;">
+                Início da nossa história 15 de Fevereiro de 2026 💖
+            </p>
+        </div>
+
+        <!-- Espaço para fotos -->
+        <div class="photos-section">
+            <h2>📸 Nossos Momentos 📸</h2>
+            <p style="color: var(--deep-blue); margin-bottom: 1rem;">
+                Nossas memórias mais especiais
+            </p>
+            <div class="photo-grid" id="photoGrid">
+                <div class="photo-placeholder"><img src="https://i.imgur.com/n7D6ZOZ.jpg" alt="Nossa Foto 1"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/yxlKSLj.jpg" alt="Nossa Foto 2"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/ARDyae6.jpg" alt="Nossa Foto 3"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/yAMbM6S.jpg" alt="Nossa Foto 4"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/zfkIUWC.jpg" alt="Nossa Foto 5"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/QLZrs2p.jpg" alt="Nossa Foto 6"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/pqVu30l.jpg" alt="Nossa Foto 7"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/KuVBOmT.jpg" alt="Nossa Foto 8"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/6OR2k7y.jpg" alt="Nossa Foto 9"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/OLmoWx6.jpg" alt="Nossa Foto 10"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/jE4g8HN.jpg" alt="Nossa Foto 11"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/h5Chh2A.jpg" alt="Nossa Foto 12"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/f0Wpl34.jpg" alt="Nossa Foto 13"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/dGRblAV.jpg" alt="Nossa Foto 14"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/czPd1QK.jpg" alt="Nossa Foto 15"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/NTOOql0.jpg" alt="Nossa Foto 16"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/GgRlBee.jpg" alt="Nossa Foto 17"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/elfenLj.jpg" alt="Nossa Foto 18"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/65acL7C.jpg" alt="Nossa Foto 19"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/PyzDnVi.jpg" alt="Nossa Foto 20"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/JoQyO1N.jpg" alt="Nossa Foto 21"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/1beY8eE.jpg" alt="Nossa Foto 22"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/hI7paRZ.jpg" alt="Nossa Foto 23"></div>
+                <div class="photo-placeholder-empty">
+                    <span>24 com a que vamos tirar hoje 💕</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cartinha de amor -->
+        <div class="message-section">
+            <h2>💌 Minha Cartinha Para Você 💌</h2>
+            <div class="message-box">
+                <p class="message-text">
+                    Desde que nos encontramos, meus dias ganharam mais cor, 
+                    meus sorrisos ficaram mais sinceros e meu coração encontrou 
+                    em você um lugar para chamar de lar. 
+                    <br><br>
+                    Sou grato por cada momento, cada sorriso e por ter você ao meu lado. 
+                    <br><br>
+                    Feliz aniversário, meu amor. Que eu possa estar ao seu lado 
+                    em muitos e muitos aniversários. 
+                    <br><br>
+                    Te amo infinitamente. ❤️
+                </p>
+                <div class="message-signature">
+                    Com todo meu amor, para sempre 💕
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="coffee-footer">
+            Feito com muito amor para minha Xuxuzinha, Feliz Aniversário!!! 🎂🎉✨❤️‍🔥❤️‍🔥
+            <br>
+            <span>☕🦋☕🦋☕</span>
+        </div>
+    </div>
+
+    <script>
+        // Função para calcular o tempo juntos
+        function updateCounter() {
+            const startDate = new Date('2026-02-15T00:00:00');
+            const now = new Date();
+            const difference = now - startDate;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Atualiza o contador a cada segundo
+        updateCounter();
+        setInterval(updateCounter, 1000);
+
+        // Função para abrir a imagem em tela cheia
+        document.querySelectorAll('.photo-placeholder').forEach((placeholder, index) => {
+            placeholder.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                if (img && img.src) {
+                    window.open(img.src, '_blank');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
