@@ -21,7 +21,6 @@
             --deep-blue: #2C5282;
             --soft-blue: #B8D4E8;
             --shadow: rgba(0, 102, 51, 0.15);
-            --border-light: #E0F0E8;
         }
 
         * {
@@ -223,7 +222,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px var(--shadow);
@@ -341,10 +339,6 @@
                 gap: 1rem;
             }
             
-            .photo-placeholder {
-                font-size: 3rem;
-            }
-            
             .music-section h2 {
                 font-size: 2rem;
             }
@@ -357,7 +351,6 @@
 </head>
 <body>
     <div class="coffee-page">
-        <!-- Header com símbolos -->
         <div class="coffee-header">
             <h1>Feliz Aniversário, Julia! 🎂</h1>
             <p>Minha Xuxuzinha</p>
@@ -368,7 +361,6 @@
             </div>
         </div>
 
-        <!-- SEÇÃO DE MÚSICA -->
         <div class="music-section">
             <h2>🎵 Nossa Música 🎵</h2>
             <p>Escute nossa música enquanto navega por aqui... 💕</p>
@@ -385,7 +377,6 @@
             </div>
         </div>
 
-        <!-- Contador de tempo juntos -->
         <div class="counter-section">
             <h2>💕 Nosso Tempo Juntos 💕</h2>
             <div class="counter-container">
@@ -411,41 +402,39 @@
             </p>
         </div>
 
-        <!-- Espaço para fotos -->
         <div class="photos-section">
             <h2>📸 Nossos Momentos 📸</h2>
             <p style="color: var(--deep-blue); margin-bottom: 1rem;">
                 Nossas memórias mais especiais
             </p>
-            <div class="photo-grid" id="photoGrid">
-                <div class="photo-placeholder"><img src="https://i.imgur.com/n7D6ZOZ.jpg" alt="Nossa Foto 1"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/yxlKSLj.jpg" alt="Nossa Foto 2"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/ARDyae6.jpg" alt="Nossa Foto 3"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/yAMbM6S.jpg" alt="Nossa Foto 4"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/zfkIUWC.jpg" alt="Nossa Foto 5"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/QLZrs2p.jpg" alt="Nossa Foto 6"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/pqVu30l.jpg" alt="Nossa Foto 7"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/KuVBOmT.jpg" alt="Nossa Foto 8"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/6OR2k7y.jpg" alt="Nossa Foto 9"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/OLmoWx6.jpg" alt="Nossa Foto 10"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/jE4g8HN.jpg" alt="Nossa Foto 11"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/h5Chh2A.jpg" alt="Nossa Foto 12"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/f0Wpl34.jpg" alt="Nossa Foto 13"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/dGRblAV.jpg" alt="Nossa Foto 14"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/czPd1QK.jpg" alt="Nossa Foto 15"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/NTOOql0.jpg" alt="Nossa Foto 16"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/GgRlBee.jpg" alt="Nossa Foto 17"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/elfenLj.jpg" alt="Nossa Foto 18"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/65acL7C.jpg" alt="Nossa Foto 19"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/PyzDnVi.jpg" alt="Nossa Foto 20"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/JoQyO1N.jpg" alt="Nossa Foto 21"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/1beY8eE.jpg" alt="Nossa Foto 22"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/hI7paRZ.jpg" alt="Nossa Foto 23"></div>
-                <div class="photo-placeholder"><img src="https://i.imgur.com/8YHWsvu.jpg" alt="Nossa Foto 24"></div>
+            <div class="photo-grid">
+                <div class="photo-placeholder"><img src="https://i.imgur.com/n7D6ZOZ.jpg" alt="Foto 1"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/yxlKSLj.jpg" alt="Foto 2"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/ARDyae6.jpg" alt="Foto 3"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/yAMbM6S.jpg" alt="Foto 4"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/zfkIUWC.jpg" alt="Foto 5"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/QLZrs2p.jpg" alt="Foto 6"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/pqVu30l.jpg" alt="Foto 7"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/KuVBOmT.jpg" alt="Foto 8"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/6OR2k7y.jpg" alt="Foto 9"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/OLmoWx6.jpg" alt="Foto 10"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/jE4g8HN.jpg" alt="Foto 11"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/h5Chh2A.jpg" alt="Foto 12"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/f0Wpl34.jpg" alt="Foto 13"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/dGRblAV.jpg" alt="Foto 14"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/czPd1QK.jpg" alt="Foto 15"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/NTOOql0.jpg" alt="Foto 16"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/GgRlBee.jpg" alt="Foto 17"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/elfenLj.jpg" alt="Foto 18"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/65acL7C.jpg" alt="Foto 19"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/PyzDnVi.jpg" alt="Foto 20"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/JoQyO1N.jpg" alt="Foto 21"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/1beY8eE.jpg" alt="Foto 22"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/hI7paRZ.jpg" alt="Foto 23"></div>
+                <div class="photo-placeholder"><img src="https://i.imgur.com/8YHWsvu.jpg" alt="Foto 24"></div>
             </div>
         </div>
 
-        <!-- Cartinha de amor -->
         <div class="message-section">
             <h2>💌 Minha Cartinha Para Você 💌</h2>
             <div class="message-box">
@@ -467,7 +456,6 @@
             </div>
         </div>
 
-        <!-- Footer -->
         <div class="coffee-footer">
             Feito com muito amor para minha Xuxuzinha, Feliz Aniversário!!! 🎂🎉✨❤️‍🔥❤️‍🔥
             <br>
@@ -476,7 +464,6 @@
     </div>
 
     <script>
-        // Função para calcular o tempo juntos
         function updateCounter() {
             const startDate = new Date('2026-02-15T00:00:00');
             const now = new Date();
@@ -493,12 +480,10 @@
             document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
         }
 
-        // Atualiza o contador a cada segundo
         updateCounter();
         setInterval(updateCounter, 1000);
 
-        // Função para abrir a imagem em tela cheia
-        document.querySelectorAll('.photo-placeholder').forEach((placeholder, index) => {
+        document.querySelectorAll('.photo-placeholder').forEach((placeholder) => {
             placeholder.addEventListener('click', function() {
                 const img = this.querySelector('img');
                 if (img && img.src) {
